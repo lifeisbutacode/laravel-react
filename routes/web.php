@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', 'TodoController@index');
+// Route::get('/', 'TodoController@index');
+// Route::post('/', 'TodoController@insertTodo');

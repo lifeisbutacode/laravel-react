@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Products Endpoint
+Route::get('/product', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@fetchProductById');
+Route::post('/product/create', 'ProductController@createProduct');
+Route::put('/product/{id}', 'ProductController@updateProduct');
+
+Route::get('/', 'TodoController@index');
+Route::post('/', 'TodoController@insertTodo');
+Route::get('/{id}', 'TodoController@viewTodoById');
+
