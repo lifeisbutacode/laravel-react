@@ -22,6 +22,7 @@ Route::get('/product', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@fetchProductById');
 Route::post('/product/create', 'ProductController@createProduct');
 Route::put('/product/{id}', 'ProductController@updateProduct');
+Route::delete('/product/{id}', 'ProductController@deleteProduct');
 
 Route::get('/', 'TodoController@index');
 Route::post('/', 'TodoController@insertTodo');

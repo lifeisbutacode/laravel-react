@@ -115,4 +115,27 @@ class ProductController extends Controller
 
     }
 
+    public function deleteProduct(Request $request){
+        $id = $request->route('id');
+        $product = new Product;
+        $_product = $product
+                    ->find($id);
+
+        if($_product != NULL) {
+            $_product->delete($id);
+
+            $response = array(
+                'status' => 'SUCCESS',
+                'message' => 'SUCCESS DELETING'
+            );
+        } else {
+            $response = array(
+                'status' => 'FAILED',
+                'message' => 'NO PRODUCT FOUND'
+            );
+        }   
+        
+        return $response;
+    }
+
 }
